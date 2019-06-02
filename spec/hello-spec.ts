@@ -1,5 +1,10 @@
 beforeAll(() => {
-  throw new Error('beforeAll-error')
+  try {
+    throw new Error('beforeAll-error')
+  } catch (e) {
+    console.log(e)
+    process.exit(-1)
+  }
 });
 
 describe("A suite", () => {

@@ -7,6 +7,17 @@ https://github.com/jasmine/jasmine/issues/577
 
 从五年前就开始讨论，直到现在也没有修改。是时候换掉它了。
 
+可以使用强行使用`process.exit`：
+
+```
+try {
+    throw new Error('beforeAll-error')
+} catch (e) {
+  console.log(e)
+  process.exit(-1)
+}
+```
+
 ```
 npm install
 npm test
